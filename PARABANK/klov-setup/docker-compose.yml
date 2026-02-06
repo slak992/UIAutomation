@@ -1,0 +1,23 @@
+services:
+  klov-mongo:
+    image: mongo:4.4
+    container_name: klov-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - klov-db:/data/db
+
+  klov-server:
+    image: anshooarora/klov:1.0.1
+    container_name: klov-server
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://klov-mongo:27017/klov
+      - SPRING_DATA_MONGODB_DATABASE=klov
+    ports:
+      - "8082:80"
+    depends_on:
+      - klov-mongo
+    restart: always
+
+volumes:
+  klov-db:

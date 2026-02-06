@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.parabank.ui.base.TestListner"/>
+    <listener class-name="com.parabank.ui.base.AnnotationTransformer"/>
+  </listeners>
+  <test thread-count="5" parallel="classes" name="Login(failed)">
+    <classes>
+      <class name="com.parabank.ui.tests.pos.POS_Login_Test">
+        <methods>
+          <include name="tearDown"/>
+          <include name="webDriverSetUp"/>
+          <include name="tearDownSetup"/>
+          <include name="login_registerUser"/>
+          <include name="checkUserFromDB" invocation-numbers="0 1"/>
+          <include name="globalSetup"/>
+        </methods>
+      </class> <!-- com.parabank.ui.tests.pos.POS_Login_Test -->
+    </classes>
+  </test> <!-- Login(failed) -->
+  <test thread-count="5" parallel="methods" name="Negative Tests(failed)">
+    <classes>
+      <class name="com.parabank.ui.tests.neg.NEG_loanProcessingTest">
+        <methods>
+          <include name="NEG_loanProcessing_request"/>
+          <include name="tearDown"/>
+          <include name="webDriverSetUp"/>
+          <include name="tearDownSetup"/>
+          <include name="globalSetup"/>
+        </methods>
+      </class> <!-- com.parabank.ui.tests.neg.NEG_loanProcessingTest -->
+    </classes>
+  </test> <!-- Negative Tests(failed) -->
+  <test thread-count="5" parallel="classes" name="Account Settings(failed)">
+    <classes>
+      <class name="com.parabank.ui.tests.pos.POS_OpenNewAccount">
+        <methods>
+          <include name="tearDown"/>
+          <include name="webDriverSetUp"/>
+          <include name="tearDownSetup"/>
+          <include name="globalSetup"/>
+          <include name="verifyOpeningSavingsAcct"/>
+        </methods>
+      </class> <!-- com.parabank.ui.tests.pos.POS_OpenNewAccount -->
+    </classes>
+  </test> <!-- Account Settings(failed) -->
+</suite> <!-- Failed suite [Suite] -->

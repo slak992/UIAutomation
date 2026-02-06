@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="8">Suite</th></tr>
+<tr><td><a href="#t0">Login</a></td><td class="num">6</td><td class="num">0</td><td class="num attn">9</td><td class="num attn">3</td><td class="num">118,890</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">Negative Tests</a></td><td class="num">12</td><td class="num">0</td><td class="num attn">2</td><td class="num attn">1</td><td class="num">72,674</td><td></td><td></td></tr>
+<tr><td><a href="#t2">Account Settings</a></td><td class="num">4</td><td class="num">0</td><td class="num attn">1</td><td class="num attn">1</td><td class="num">38,729</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">22</th><th class="num">0</th><th class="num attn">12</th><th class="num attn">5</th><th class="num">230,293</th><th colspan="2"></th></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Login &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.parabank.ui.tests.pos.POS_loanProcessingTest</td><td><a href="#m0">tearDown</a></td><td rowspan="1">1770402797413</td><td rowspan="1">2408</td></tr><tr><th colspan="4">Login &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">com.parabank.ui.tests.pos.POS_Login_Test</td><td><a href="#m1">checkUserFromDB</a></td><td rowspan="2">1770402750552</td><td rowspan="2">4028</td></tr><tr class="failedeven"><td><a href="#m2">checkUserFromDB</a></td></tr><tr class="failedeven"><td><a href="#m3">login_registerUser</a></td><td rowspan="1">1770402807706</td><td rowspan="1">105</td></tr><tr><th colspan="4">Login &#8212; retried</th></tr><tr class="retriedeven"><td rowspan="6">com.parabank.ui.tests.pos.POS_Login_Test</td><td><a href="#m4">checkUserFromDB</a></td><td rowspan="4">1770402765385</td><td rowspan="4">4066</td></tr><tr class="retriedeven"><td><a href="#m5">checkUserFromDB</a></td></tr><tr class="retriedeven"><td><a href="#m6">checkUserFromDB</a></td></tr><tr class="retriedeven"><td><a href="#m7">checkUserFromDB</a></td></tr><tr class="retriedeven"><td><a href="#m8">login_registerUser</a></td><td rowspan="2">1770402802623</td><td rowspan="2">48</td></tr><tr class="retriedeven"><td><a href="#m9">login_registerUser</a></td></tr><tr class="retriedodd"><td rowspan="1">com.parabank.ui.tests.pos.POS_Transaction</td><td><a href="#m10">findTransactionByDate</a></td><td rowspan="1">1770402718880</td><td rowspan="1">39015</td></tr><tr class="retriedeven"><td rowspan="1">com.parabank.ui.tests.pos.POS_TransferFunds</td><td><a href="#m11">verifyTransferFunds</a></td><td rowspan="1">1770402719522</td><td rowspan="1">32247</td></tr><tr class="retriedodd"><td rowspan="1">com.parabank.ui.tests.pos.POS_loanProcessingTest</td><td><a href="#m12">loanProcessing_request</a></td><td rowspan="1">1770402718760</td><td rowspan="1">46219</td></tr><tr><th colspan="4">Login &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.parabank.ui.tests.pos.POS_Account_Test</td><td><a href="#m13">account_OpenNewAccount</a></td><td rowspan="1">1770402714319</td><td rowspan="1">41345</td></tr><tr class="passedeven"><td><a href="#m14">account_checkNewAccountDettails</a></td><td rowspan="1">1770402764378</td><td rowspan="1">10062</td></tr><tr class="passedodd"><td rowspan="1">com.parabank.ui.tests.pos.POS_Login_Test</td><td><a href="#m15">login_user</a></td><td rowspan="1">1770402810498</td><td rowspan="1">445</td></tr><tr class="passedeven"><td rowspan="1">com.parabank.ui.tests.pos.POS_Transaction</td><td><a href="#m16">findTransactionByDate</a></td><td rowspan="1">1770402765709</td><td rowspan="1">35167</td></tr><tr class="passedodd"><td rowspan="1">com.parabank.ui.tests.pos.POS_TransferFunds</td><td><a href="#m17">verifyTransferFunds</a></td><td rowspan="1">1770402757477</td><td rowspan="1">36601</td></tr><tr class="passedeven"><td rowspan="1">com.parabank.ui.tests.pos.POS_loanProcessingTest</td><td><a href="#m18">loanProcessing_request</a></td><td rowspan="1">1770402782189</td><td rowspan="1">15195</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">Negative Tests &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.parabank.ui.tests.neg.NEG_loanProcessingTest</td><td><a href="#m19">NEG_loanProcessing_request</a></td><td rowspan="1">1770402877786</td><td rowspan="1">4682</td></tr><tr><th colspan="4">Negative Tests &#8212; retried</th></tr><tr class="retriedeven"><td rowspan="2">com.parabank.ui.tests.neg.NEG_loanProcessingTest</td><td><a href="#m20">NEG_loanProcessing_request</a></td><td rowspan="2">1770402819520</td><td rowspan="2">15874</td></tr><tr class="retriedeven"><td><a href="#m21">NEG_loanProcessing_request</a></td></tr><tr><th colspan="4">Negative Tests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="12">com.parabank.ui.tests.neg.NEG_Login_Test</td><td><a href="#m22">NEG_loginWithInvalidUser</a></td><td rowspan="1">1770402818570</td><td rowspan="1">2278</td></tr><tr class="passedeven"><td><a href="#m23">NEG_registerUserWithAddressBlank</a></td><td rowspan="1">1770402820852</td><td rowspan="1">7003</td></tr><tr class="passedeven"><td><a href="#m24">NEG_registerUserWithCityBlank</a></td><td rowspan="1">1770402818349</td><td rowspan="1">11530</td></tr><tr class="passedeven"><td><a href="#m25">NEG_registerUserWithConfirmPasswordBlank</a></td><td rowspan="1">1770402818730</td><td rowspan="1">12166</td></tr><tr class="passedeven"><td><a href="#m26">NEG_registerUserWithFirstNameBlank</a></td><td rowspan="1">1770402833477</td><td rowspan="1">9382</td></tr><tr class="passedeven"><td><a href="#m27">NEG_registerUserWithLastNameBlank</a></td><td rowspan="1">1770402838464</td><td rowspan="1">7156</td></tr><tr class="passedeven"><td><a href="#m28">NEG_registerUserWithPasswordMismatch</a></td><td rowspan="1">1770402838700</td><td rowspan="1">6520</td></tr><tr class="passedeven"><td><a href="#m29">NEG_registerUserWithSSNBlank</a></td><td rowspan="1">1770402850494</td><td rowspan="1">3183</td></tr><tr class="passedeven"><td><a href="#m30">NEG_registerUserWithStateBlank</a></td><td rowspan="1">1770402859032</td><td rowspan="1">5609</td></tr><tr class="passedeven"><td><a href="#m31">NEG_registerUserWithUserNameBlank</a></td><td rowspan="1">1770402860411</td><td rowspan="1">7042</td></tr><tr class="passedeven"><td><a href="#m32">NEG_registerUserWithpasswordBlank</a></td><td rowspan="1">1770402870888</td><td rowspan="1">4805</td></tr><tr class="passedeven"><td><a href="#m33">NEG_registerUserWithzipCodeBlank</a></td><td rowspan="1">1770402874451</td><td rowspan="1">5314</td></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">Account Settings &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.parabank.ui.tests.pos.POS_OpenNewAccount</td><td><a href="#m34">tearDownSetup</a></td><td rowspan="1">1770402923659</td><td rowspan="1">21409</td></tr><tr><th colspan="4">Account Settings &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.parabank.ui.tests.pos.POS_OpenNewAccount</td><td><a href="#m35">verifyOpeningSavingsAcct</a></td><td rowspan="1">1770402913627</td><td rowspan="1">0</td></tr><tr><th colspan="4">Account Settings &#8212; retried</th></tr><tr class="retriedeven"><td rowspan="1">com.parabank.ui.tests.pos.POS_OpenNewAccount</td><td><a href="#m36">verifyCustomiseInitialBalance</a></td><td rowspan="1">1770402887283</td><td rowspan="1">656</td></tr><tr><th colspan="4">Account Settings &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">com.parabank.ui.tests.pos.POS_OpenNewAccount</td><td><a href="#m37">verifyCustomiseInitialBalance</a></td><td rowspan="1">1770402891398</td><td rowspan="1">10018</td></tr><tr class="passedeven"><td><a href="#m38">verifyDefaultInitBalanceTest</a></td><td rowspan="1">1770402916018</td><td rowspan="1">7069</td></tr><tr class="passedeven"><td><a href="#m39">verifyMinBalanceTest</a></td><td rowspan="1">1770402904616</td><td rowspan="1">3186</td></tr><tr class="passedeven"><td><a href="#m40">verifyOpeningAccountWithOtherThanBaseAcct</a></td><td rowspan="1">1770402910272</td><td rowspan="1">2972</td></tr></tbody>
+</table>
+<h2>Login</h2><h3 id="m0">com.parabank.ui.tests.pos.POS_loanProcessingTest#tearDown</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	expected [02-06-2026] but found [02-6-2026]
+	at com.parabank.ui.base.BaseTest.tearDown(BaseTest.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.parabank.ui.tests.pos.POS_Login_Test#checkUserFromDB</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>User1</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.internal.thread.ThreadTimeoutException: Method com.parabank.ui.tests.pos.POS_Login_Test.checkUserFromDB() didn&apos;t finish within the time-out 4000
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.parabank.ui.tests.pos.POS_Login_Test#checkUserFromDB</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>User2</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.internal.thread.ThreadTimeoutException: Method com.parabank.ui.tests.pos.POS_Login_Test.checkUserFromDB() didn&apos;t finish within the time-out 4000
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.parabank.ui.tests.pos.POS_Login_Test#login_registerUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;com.parabank.ui.PARABANK.helpers.JsonReader.queryJsonData(String, String)&quot; because &quot;this.jsObj&quot; is null
+	at com.parabank.ui.tests.pos.POS_Login_Test.login_registerUser(POS_Login_Test.java:33)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 11 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.parabank.ui.tests.pos.POS_Login_Test#checkUserFromDB</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>User2</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.internal.thread.ThreadTimeoutException: Method com.parabank.ui.tests.pos.POS_Login_Test.checkUserFromDB() didn&apos;t finish within the time-out 4000
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.parabank.ui.tests.pos.POS_Login_Test#checkUserFromDB</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>User1</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.internal.thread.ThreadTimeoutException: Method com.parabank.ui.tests.pos.POS_Login_Test.checkUserFromDB() didn&apos;t finish within the time-out 4000
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">com.parabank.ui.tests.pos.POS_Login_Test#checkUserFromDB</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>User1</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.internal.thread.ThreadTimeoutException: Method com.parabank.ui.tests.pos.POS_Login_Test.checkUserFromDB() didn&apos;t finish within the time-out 4000
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">com.parabank.ui.tests.pos.POS_Login_Test#checkUserFromDB</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>User2</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.internal.thread.ThreadTimeoutException: Method com.parabank.ui.tests.pos.POS_Login_Test.checkUserFromDB() didn&apos;t finish within the time-out 4000
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">com.parabank.ui.tests.pos.POS_Login_Test#login_registerUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;com.parabank.ui.PARABANK.helpers.JsonReader.queryJsonData(String, String)&quot; because &quot;this.jsObj&quot; is null
+	at com.parabank.ui.tests.pos.POS_Login_Test.login_registerUser(POS_Login_Test.java:33)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 11 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">com.parabank.ui.tests.pos.POS_Login_Test#login_registerUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;com.parabank.ui.PARABANK.helpers.JsonReader.queryJsonData(String, String)&quot; because &quot;this.jsObj&quot; is null
+	at com.parabank.ui.tests.pos.POS_Login_Test.login_registerUser(POS_Login_Test.java:33)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 11 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">com.parabank.ui.tests.pos.POS_Transaction#findTransactionByDate</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@281a5517</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //span[contains(text(),&apos;deposit&apos;)]//parent::a&apos; (tried for 5 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.parabank.ui.PARABANK.helpers.ReuseableComponents.waitForElement(ReuseableComponents.java:35)
+	at com.parabank.ui.PARABANK.POM.Admin.depositFund(Admin.java:92)
+	at com.parabank.ui.tests.pos.POS_Transaction.findTransactionByDate(POS_Transaction.java:63)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(text(),&apos;deposit&apos;)]//parent::a&quot;}
+  (Session info: chrome=144.0.7559.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b43856b6a38c33815dab57378620c495, findElement {using=xpath, value=//span[contains(text(),&apos;deposit&apos;)]//parent::a}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.110, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\SREELA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59613}, goog:processID: 18812, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59613/devtoo..., se:cdpVersion: 144.0.7559.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b43856b6a38c33815dab57378620c495
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:561)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:384)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:378)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy21.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:308)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:294)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:291)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 19 more
+... Removed 14 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">com.parabank.ui.tests.pos.POS_TransferFunds#verifyTransferFunds</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(text(),&apos;Open New Account&apos;)]&quot;}
+  (Session info: chrome=144.0.7559.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [767401da5d81e1c2460404006f31931a, findElement {using=xpath, value=//a[contains(text(),&apos;Open New Account&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.110, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\SREELA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57200}, goog:processID: 34220, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57200/devtoo..., se:cdpVersion: 144.0.7559.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 767401da5d81e1c2460404006f31931a
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:561)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:384)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:378)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy21.click(Unknown Source)
+	at com.parabank.ui.PARABANK.POM.Home.clickOpenNewAccountLink(Home.java:42)
+	at com.parabank.ui.tests.pos.POS_TransferFunds.verifyTransferFunds(POS_TransferFunds.java:48)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 14 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">com.parabank.ui.tests.pos.POS_loanProcessingTest#loanProcessing_request</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (ef41b8d2e4c231232374b6671b6a5e79)] -&gt; css selector: td#responseDate] (tried for 3 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.110, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\SREELA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57201}, goog:processID: 13664, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57201/devtoo..., se:cdpVersion: 144.0.7559.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ef41b8d2e4c231232374b6671b6a5e79
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.parabank.ui.PARABANK.helpers.ReuseableComponents.waitForElement(ReuseableComponents.java:35)
+	at com.parabank.ui.PARABANK.POM.Loan.getLoanAccountDetails(Loan.java:54)
+	at com.parabank.ui.tests.pos.POS_loanProcessingTest.loanProcessing_request(POS_loanProcessingTest.java:39)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 11 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">com.parabank.ui.tests.pos.POS_Account_Test#account_OpenNewAccount</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">com.parabank.ui.tests.pos.POS_Account_Test#account_checkNewAccountDettails</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">com.parabank.ui.tests.pos.POS_Login_Test#login_user</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m16">com.parabank.ui.tests.pos.POS_Transaction#findTransactionByDate</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@281a5517</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m17">com.parabank.ui.tests.pos.POS_TransferFunds#verifyTransferFunds</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m18">com.parabank.ui.tests.pos.POS_loanProcessingTest#loanProcessing_request</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Negative Tests</h2><h3 id="m19">com.parabank.ui.tests.neg.NEG_loanProcessingTest#NEG_loanProcessing_request</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [02-06-2026] but found [02-6-2026]
+	at com.parabank.ui.tests.neg.NEG_loanProcessingTest.NEG_loanProcessing_request(NEG_loanProcessingTest.java:40)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 17 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m20">com.parabank.ui.tests.neg.NEG_loanProcessingTest#NEG_loanProcessing_request</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [02-06-2026] but found [02-6-2026]
+	at com.parabank.ui.tests.neg.NEG_loanProcessingTest.NEG_loanProcessing_request(NEG_loanProcessingTest.java:40)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 17 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m21">com.parabank.ui.tests.neg.NEG_loanProcessingTest#NEG_loanProcessing_request</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [02-06-2026] but found [02-6-2026]
+	at com.parabank.ui.tests.neg.NEG_loanProcessingTest.NEG_loanProcessing_request(NEG_loanProcessingTest.java:40)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 17 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m22">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_loginWithInvalidUser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m23">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithAddressBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m24">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithCityBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m25">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithConfirmPasswordBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m26">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithFirstNameBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m27">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithLastNameBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m28">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithPasswordMismatch</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m29">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithSSNBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m30">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithStateBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m31">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithUserNameBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m32">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithpasswordBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m33">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithzipCodeBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Account Settings</h2><h3 id="m34">com.parabank.ui.tests.pos.POS_OpenNewAccount#tearDownSetup</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(text(),&apos;ParaBank-UI&apos;)]&quot;}
+  (Session info: chrome=144.0.7559.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [47189e885c5302ad55a1b5921b3f7dbf, findElement {using=xpath, value=//a[contains(text(),&apos;ParaBank-UI&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.110, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\SREELA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57646}, goog:processID: 8200, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57646/devtoo..., se:cdpVersion: 144.0.7559.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 47189e885c5302ad55a1b5921b3f7dbf
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:561)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:384)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:378)
+	at com.parabank.ui.PARABANK.helpers.ChromeDevToolProtocol.savePageAsPDF(ChromeDevToolProtocol.java:49)
+	at com.parabank.ui.base.BaseTest.tearDownSetup(BaseTest.java:103)
+... Removed 20 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m35">com.parabank.ui.tests.pos.POS_OpenNewAccount#verifyOpeningSavingsAcct</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.TestNGException: 
+Parameter &apos;BalanceTest&apos; is required by @Test on method verifyOpeningSavingsAcct but has not been marked @Optional or defined
+in C:\Users\Sreelaksmi\git\UIAutomation\PARABANK\AllTests.xml
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 12 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m36">com.parabank.ui.tests.pos.POS_OpenNewAccount#verifyCustomiseInitialBalance</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: chrome=144.0.7559.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c6b79afc1a90b8bc8effac2416376598, clickElement {id=f.100682728790837526B9FA2EBE5E2E86.d.F80877403DAE7676E4BBE12B12D5B905.e.17}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.110, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\SREELA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59184}, goog:processID: 33992, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59184/devtoo..., se:cdpVersion: 144.0.7559.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c6b79afc1a90b8bc8effac2416376598)] -&gt; xpath: //a[contains(text(),&apos;Admin Page&apos;)]]
+Session ID: c6b79afc1a90b8bc8effac2416376598
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:561)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy21.click(Unknown Source)
+	at com.parabank.ui.PARABANK.POM.Home.clickAdminPageLink(Home.java:83)
+	at com.parabank.ui.tests.pos.POS_OpenNewAccount.verifyCustomiseInitialBalance(POS_OpenNewAccount.java:125)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 16 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m37">com.parabank.ui.tests.pos.POS_OpenNewAccount#verifyCustomiseInitialBalance</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m38">com.parabank.ui.tests.pos.POS_OpenNewAccount#verifyDefaultInitBalanceTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m39">com.parabank.ui.tests.pos.POS_OpenNewAccount#verifyMinBalanceTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m40">com.parabank.ui.tests.pos.POS_OpenNewAccount#verifyOpeningAccountWithOtherThanBaseAcct</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>

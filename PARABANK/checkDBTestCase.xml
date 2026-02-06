@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="classes" thread-count="5">
+<listeners>
+ <listener class-name="com.parabank.ui.base.TestListner"/>
+</listeners>
+  <test  name="Login">
+  
+    <classes>
+      <class name="com.parabank.ui.tests.pos.POS_Login_Test">
+      <methods>
+      <include name="checkUserFromDB"></include>
+      </methods>
+      </class>
+      
+      
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
