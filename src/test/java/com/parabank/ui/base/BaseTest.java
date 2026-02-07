@@ -39,6 +39,8 @@ import com.parabank.ui.PARABANK.helpers.JsonReader;
 import com.parabank.ui.PARABANK.helpers.ReuseableComponents;
 import com.parabank.ui.PARABANK.helpers.SQLHelper;
 import com.parabank.ui.PARABANK.resources.ExtentReportManager;
+import com.parabank.ui.PARABANK.POM.Login;
+
 
 public class BaseTest{
 	private static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
@@ -82,6 +84,7 @@ public class BaseTest{
 		
 		sqlObj = new SQLHelper();
 		connectDB();
+		preconditionCheck();
 		
 		cdpObject= new ChromeDevToolProtocol();
 		this.jsObj = new JsonReader();
@@ -143,14 +146,7 @@ public class BaseTest{
 			threadLocalDriver.set(driver);
 			getDriver().manage().window().maximize();
 			getDriver().get(url);
-			Login loginObj = CreatePage(Login.class);
-			Map<String,String> testData = getTestData("POS_OpenNewAccount");
-			loginObj.loginUser(testData.get("userName"), testData.get("password"));
-			if(loginObj.isUserNotRegisterErrorMsg())
-			{
-				loginObj.registerUser(testData);
 
-			}
 		}
 		else if(browserFromCmd.equals("edge"))
 		{
@@ -349,6 +345,39 @@ public class BaseTest{
 	{
 		String dbPath = System.getProperty("user.dir")+"/src/test/java/resources/DB/"+prop.getProperty("dbName");
 		sqlObj.getConnection(prop.getProperty("dbDriverName"), dbPath);
+	}
+
+	public void preconditionCheck()  throws IOException
+	{
+		WebDriver preconditionDriver = new ChromeDriver(getWebDriverOptions(new ChromeOptions()));
+		threadLocalDriver.set(preconditionDriver);
+		getDriver().manage().window().maximize();
+		getDriver().get(prop.getProperty("url"));
+		try
+		{
+			Login loginObj = createPage(Login.class);
+			Map<String,String> testData = getTestData("POS_OpenNewAccount");
+
+			loginObj.loginUser(testData.get("userName"), testData.get("password"));
+
+			if(loginObj.isUserNotRegisterErrorMsg())
+			{
+				loginObj.registerUser(testData);
+			}
+
+			System.out.println("✓ Precondition Passed: User '" + testData.get("userName") + "' can login successfully");
+		}
+		finally
+		{
+			// Clear the precondition driver
+			if(getDriver() != null)
+			{
+				getDriver().quit();
+				threadLocalDriver.remove();
+			}
+		}
+
+
 	}
 	
 	
