@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  parabank:
+    # Use locally built image or pull from registry
+    image: parabank:latest
+
+    # Container name
+    container_name: parabank-test
+
+    # Ports mapping - host:container
+    ports:
+      - "8080:8080"
+
+    # Environment variables
+    environment:
+      # Java options
+      - CATALINA_OPTS=-Xmx512m -Xms256m -Duser.timezone=UTC
+      - JAVA_OPTS=-XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0
+
+    # Health check configuration
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/parabank"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+    # Volume mounts (optional)
+    volumes:
+      # Mount logs directory if needed
+      # - ./logs:/usr/local/tomcat/logs
+      # - ./webapps:/usr/local/tomcat/webapps
+
+    # Restart policy
+    restart: unless-stopped
+
+    # Network
+    networks:
+      - parabank-network
+
+    # Resource limits (optional)
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 1G
+        reservations:
+          cpus: '1'
+          memory: 512M
+
+# Define custom network
+networks:
+  parabank-network:
+    driver: bridge
+

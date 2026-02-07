@@ -143,6 +143,14 @@ public class BaseTest{
 			threadLocalDriver.set(driver);
 			getDriver().manage().window().maximize();
 			getDriver().get(url);
+			Login loginObj = CreatePage(Login.class);
+			Map<String,String> testData = getTestData("POS_OpenNewAccount");
+			loginObj.loginUser(testData.get("userName"), testData.get("password"));
+			if(loginObj.isUserNotRegisterErrorMsg())
+			{
+				loginObj.registerUser(testData);
+
+			}
 		}
 		else if(browserFromCmd.equals("edge"))
 		{
@@ -173,6 +181,14 @@ public class BaseTest{
 		{
 			if(!f.isDirectory())f.delete();
 		}
+
+		// Detect if running in CI/CD environment (Azure DevOps)
+		boolean isCIEnvironment = System.getenv("SYSTEM_TEAMFOUNDATIONCOLLECTIONURI") != null ||
+		                          System.getenv("BUILD_REPOSITORY_URI") != null ||
+		                          System.getenv("CI") != null ||
+		                          System.getenv("TF_BUILD") != null ||
+		                          System.getProperty("headless") != null;
+
 		// 1. Remove the "Chrome is being controlled by automated software" flag
 		options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
 		options.setExperimentalOption("useAutomationExtension", false);
@@ -181,24 +197,56 @@ public class BaseTest{
 		options.addArguments("--disable-blink-features=AutomationControlled");
 
 		// 3. Set a realistic User-Agent (important for bypassing CAPTCHAs)
-//		options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36");
-		// Disable password manager & security popups
+		// options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36");
+
+		// 4. Disable password manager & security popups
 		options.addArguments("--disable-notifications");
 		options.addArguments("--disable-infobars");
 		options.addArguments("--disable-popup-blocking");
-//		options.addArguments("user-data-dir=C:\\Users\\Sreelaksmi\\AppData\\Local\\Google\\Chrome\\User Data");
-//		options.addArguments("profile-directory=Default");
-//		options.addArguments("--remote-allow-origins=*");
-//		options.addArguments("--no-sandbox");
-//		options.addArguments("--disable-dev-shm-usage");
-//		options.addArguments("--start-maximized");
-		if(System.getProperty("headless") != null)
-		{
-			options.addArguments("--headless=new");
-		}
-		
 
-		// Disable password manager
+		// 5. Azure DevOps / CI/CD Pipeline Specific Options
+		if(isCIEnvironment)
+		{
+			// Headless mode for CI/CD environments
+			options.addArguments("--headless=new");
+
+			// Disable GPU acceleration (important for CI/CD environments without GPU)
+			options.addArguments("--disable-gpu");
+
+			// Run in sandbox with restrictions for security
+			options.addArguments("--no-sandbox");
+
+			// Disable shared memory usage (prevents crashes in Docker/CI environments)
+			options.addArguments("--disable-dev-shm-usage");
+
+			// Additional CI/CD stability options
+			options.addArguments("--disable-software-rasterizer");
+			options.addArguments("--disable-extensions");
+			options.addArguments("--disable-plugins");
+
+			// Disable GPU compositing
+			options.addArguments("--disable-gpu-compositing");
+
+			// Reduce memory footprint
+			options.addArguments("--disable-background-networking");
+			options.addArguments("--disable-component-extensions-with-background-pages");
+			options.addArguments("--disable-default-apps");
+			options.addArguments("--disable-sync");
+
+			// Set window size (important when running without display)
+			options.addArguments("--window-size=1920,1080");
+
+			System.out.println("🔵 Running in CI/CD Environment (Azure DevOps) - Headless Mode Enabled");
+		}
+		else
+		{
+			// Local development/debugging options
+			// Uncomment below to maximize window in local execution
+			// options.addArguments("--start-maximized");
+			System.out.println("🟢 Running in Local Environment - Standard Mode");
+		}
+
+		// 6. Download preferences
 		Map<String, Object> prefs = new HashMap<>();
 		prefs.put("download.default_directory", downloadFilePath);
 		prefs.put("download.prompt_for_download", false);

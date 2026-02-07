@@ -1,0 +1,159 @@
+trigger:
+  - main
+  - develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  # Environment variable for automatic CI/CD detection
+  CI: 'true'
+
+  # Maven cache optimization
+  MAVEN_CACHE_FOLDER: $(Pipeline.Workspace)/.m2/repository
+  MAVEN_OPTS: '-Dmaven.repo.local=$(MAVEN_CACHE_FOLDER)'
+
+  # Java version
+  JAVA_VERSION: '17'
+
+stages:
+  - stage: Build_and_Test
+    displayName: 'Build and Run Tests'
+    jobs:
+      - job: Run_Tests
+        displayName: 'Run Selenium Tests'
+
+        steps:
+          # Step 1: Display Agent Information
+          - script: |
+              echo "Agent OS: $(Agent.OS)"
+              echo "Agent Version: $(Agent.Version)"
+              echo "Build ID: $(Build.BuildId)"
+              echo "Build Number: $(Build.BuildNumber)"
+            displayName: 'Display Agent Information'
+
+          # Step 2: Install Java
+          - task: JavaToolInstaller@0
+            inputs:
+              versionSpec: '$(JAVA_VERSION)'
+              jdkArchitectureOption: 'x64'
+              jdkSourceOption: 'PreInstalled'
+            displayName: 'Install Java $(JAVA_VERSION)'
+
+          # Step 3: Display Java Version
+          - script: |
+              java -version
+              javac -version
+            displayName: 'Verify Java Installation'
+
+          # Step 4: Cache Maven dependencies
+          - task: CacheBeta@1
+            inputs:
+              key: 'maven | "$(Agent.OS)" | **/pom.xml'
+              restoreKeys: |
+                maven | "$(Agent.OS)"
+                maven
+              path: $(MAVEN_CACHE_FOLDER)
+            displayName: 'Cache Maven packages'
+
+          # Step 5: Install Dependencies
+          - bash: |
+              sudo apt-get update
+              sudo apt-get install -y google-chrome-stable
+              google-chrome --version
+              echo "Chrome installed successfully"
+            displayName: 'Install Google Chrome'
+
+          # Step 6: Verify Maven
+          - script: mvn --version
+            displayName: 'Verify Maven Installation'
+
+          # Step 7: Maven Clean
+          - task: Maven@3
+            inputs:
+              mavenPomFile: 'pom.xml'
+              mavenOptions: '-Xmx3072m $(MAVEN_OPTS)'
+              javaHomeOption: 'JDKVersion'
+              jdkVersionOption: '$(JAVA_VERSION)'
+              jdkArchitectureOption: 'x64'
+              goals: 'clean'
+            displayName: 'Maven Clean'
+
+          # Step 8: Run Tests
+          - task: Maven@3
+            inputs:
+              mavenPomFile: 'pom.xml'
+              mavenOptions: '-Xmx3072m $(MAVEN_OPTS)'
+              javaHomeOption: 'JDKVersion'
+              jdkVersionOption: '$(JAVA_VERSION)'
+              jdkArchitectureOption: 'x64'
+              publishJUnitResults: true
+              testResultsFiles: '**/surefire-reports/TEST-*.xml'
+              testResultsFormat: 'JUnit'
+              goals: 'test'
+              arguments: |
+                -DsuiteXmlFile=testng.xml
+                -Dheadless=true
+            displayName: 'Run Tests with Maven'
+            continueOnError: true
+
+          # Step 9: Publish JUnit Test Results
+          - task: PublishTestResults@2
+            inputs:
+              testResultsFormat: 'JUnit'
+              testResultsFiles: '**/surefire-reports/TEST-*.xml'
+              failTaskOnFailedTests: false
+              mergeTestResults: true
+              testRunTitle: 'PARABANK Selenium Tests'
+            displayName: 'Publish JUnit Test Results'
+            condition: succeededOrFailed()
+
+          # Step 10: Publish Test Logs
+          - task: PublishBuildArtifacts@1
+            inputs:
+              pathToPublish: '$(System.DefaultWorkingDirectory)/logs'
+              artifactName: 'test-logs-$(Build.BuildId)'
+              publishLocation: 'Container'
+            displayName: 'Publish Test Logs'
+            condition: always()
+
+          # Step 11: Publish Test Reports
+          - task: PublishBuildArtifacts@1
+            inputs:
+              pathToPublish: '$(System.DefaultWorkingDirectory)/test-output'
+              artifactName: 'test-reports-$(Build.BuildId)'
+              publishLocation: 'Container'
+            displayName: 'Publish Test Reports'
+            condition: always()
+
+          # Step 12: Publish Surefire Reports
+          - task: PublishBuildArtifacts@1
+            inputs:
+              pathToPublish: '$(System.DefaultWorkingDirectory)/target/surefire-reports'
+              artifactName: 'surefire-reports-$(Build.BuildId)'
+              publishLocation: 'Container'
+            displayName: 'Publish Surefire Reports'
+            condition: always()
+
+          # Step 13: Generate Summary Report
+          - script: |
+              echo "=========================================="
+              echo "Test Execution Summary"
+              echo "=========================================="
+              echo "Build ID: $(Build.BuildId)"
+              echo "Build Number: $(Build.BuildNumber)"
+              echo "Repository: $(Build.Repository.Name)"
+              echo "Branch: $(Build.SourceBranch)"
+              echo "Commit: $(Build.SourceVersion)"
+              echo "=========================================="
+              if [ -d "logs" ]; then
+                echo "Test Logs Directory: Available"
+                ls -lh logs/ | head -20
+              fi
+              if [ -d "test-output" ]; then
+                echo "Test Reports Directory: Available"
+                ls -lh test-output/ | head -20
+              fi
+            displayName: 'Generate Summary Report'
+            condition: always()
+

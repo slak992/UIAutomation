@@ -1,0 +1,234 @@
+trigger:
+  - main
+  - develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  CI: 'true'
+  JAVA_VERSION: '17'
+  MAVEN_CACHE_FOLDER: $(Pipeline.Workspace)/.m2/repository
+  MAVEN_OPTS: '-Dmaven.repo.local=$(MAVEN_CACHE_FOLDER)'
+  PARABANK_URL: 'http://localhost:8080/parabank'
+  PARABANK_CONTAINER_NAME: 'parabank-test-$(Build.BuildId)'
+
+stages:
+  - stage: Setup_and_Build_Docker
+    displayName: 'Setup and Build Docker Image'
+    jobs:
+      - job: BuildDocker
+        displayName: 'Build ParaBank Docker Image'
+
+        steps:
+          - script: |
+              echo "=========================================="
+              echo "Build Information"
+              echo "=========================================="
+              echo "Build ID: $(Build.BuildId)"
+              echo "Build Number: $(Build.BuildNumber)"
+              echo "Repository: $(Build.Repository.Name)"
+              echo "Branch: $(Build.SourceBranch)"
+              echo "=========================================="
+            displayName: 'Display Build Info'
+
+          # Note: This assumes you have Dockerfile in repo root
+          # If you need to build from source, modify the Docker build step
+          - script: |
+              if [ -f Dockerfile ]; then
+                echo "✅ Dockerfile found in repository"
+                docker build -t parabank:latest .
+              else
+                echo "⚠️  Dockerfile not found, using pre-built image"
+                docker pull parabank:latest || echo "Image not in local cache, will use default"
+              fi
+            displayName: 'Build or Prepare ParaBank Docker Image'
+            continueOnError: true
+
+          - script: docker images | grep parabank
+            displayName: 'List Available ParaBank Images'
+
+  - stage: Start_Application
+    displayName: 'Start ParaBank Application'
+    dependsOn: Setup_and_Build_Docker
+    condition: succeeded()
+    jobs:
+      - job: StartParaBank
+        displayName: 'Start Docker Container'
+
+        steps:
+          - script: |
+              echo "Starting ParaBank Docker container..."
+              docker run -d \
+                --name $(PARABANK_CONTAINER_NAME) \
+                -p 8080:8080 \
+                parabank:latest
+              
+              echo "Container started with name: $(PARABANK_CONTAINER_NAME)"
+              docker ps
+            displayName: 'Start ParaBank Container'
+
+          - script: |
+              echo "Waiting for ParaBank to be ready..."
+              
+              max_attempts=30
+              attempt=0
+              
+              while [ $attempt -lt $max_attempts ]; do
+                echo "Attempt $((attempt + 1))/$max_attempts..."
+                
+                if curl -f http://localhost:8080/parabank > /dev/null 2>&1; then
+                  echo "✅ ParaBank is ready and responding!"
+                  echo "Testing URL: $(PARABANK_URL)"
+                  exit 0
+                fi
+                
+                echo "⏳ Waiting for ParaBank to start..."
+                sleep 2
+                attempt=$((attempt + 1))
+              done
+              
+              echo "❌ ParaBank failed to start after $max_attempts attempts"
+              docker logs $(PARABANK_CONTAINER_NAME)
+              exit 1
+            displayName: 'Health Check - Wait for ParaBank'
+            timeoutInMinutes: 5
+
+  - stage: Build_and_Test
+    displayName: 'Build and Run Tests'
+    dependsOn: Start_Application
+    condition: succeeded()
+    jobs:
+      - job: Run_Tests
+        displayName: 'Run Selenium Tests'
+
+        steps:
+          # Step 1: Install Java
+          - task: JavaToolInstaller@0
+            inputs:
+              versionSpec: '$(JAVA_VERSION)'
+              jdkArchitectureOption: 'x64'
+              jdkSourceOption: 'PreInstalled'
+            displayName: 'Install Java $(JAVA_VERSION)'
+
+          # Step 2: Install Chrome
+          - bash: |
+              sudo apt-get update
+              sudo apt-get install -y google-chrome-stable
+              google-chrome --version
+            displayName: 'Install Google Chrome'
+
+          # Step 3: Verify Application is Accessible
+          - script: |
+              echo "Verifying ParaBank is accessible..."
+              curl -v http://localhost:8080/parabank || true
+              
+              echo ""
+              echo "Checking Docker container status..."
+              docker ps
+              docker logs $(PARABANK_CONTAINER_NAME) --tail 20
+            displayName: 'Verify Application Accessibility'
+            continueOnError: true
+
+          # Step 4: Cache Maven dependencies
+          - task: CacheBeta@1
+            inputs:
+              key: 'maven | "$(Agent.OS)" | **/pom.xml'
+              restoreKeys: |
+                maven | "$(Agent.OS)"
+                maven
+              path: $(MAVEN_CACHE_FOLDER)
+            displayName: 'Cache Maven packages'
+
+          # Step 5: Run Tests Against Containerized ParaBank
+          - task: Maven@3
+            inputs:
+              mavenPomFile: 'pom.xml'
+              mavenOptions: '-Xmx3072m $(MAVEN_OPTS)'
+              javaHomeOption: 'JDKVersion'
+              jdkVersionOption: '$(JAVA_VERSION)'
+              jdkArchitectureOption: 'x64'
+              publishJUnitResults: true
+              testResultsFiles: '**/surefire-reports/TEST-*.xml'
+              testResultsFormat: 'JUnit'
+              goals: 'clean test'
+              arguments: |
+                -DsuiteXmlFile=testng.xml
+                -Durl=$(PARABANK_URL)
+                -Dheadless=true
+            displayName: 'Run Selenium Tests Against ParaBank'
+            continueOnError: true
+
+          # Step 6: Publish Test Results
+          - task: PublishTestResults@2
+            inputs:
+              testResultsFormat: 'JUnit'
+              testResultsFiles: '**/surefire-reports/TEST-*.xml'
+              failTaskOnFailedTests: false
+              mergeTestResults: true
+              testRunTitle: 'PARABANK Selenium Tests - Containerized'
+            displayName: 'Publish JUnit Test Results'
+            condition: succeededOrFailed()
+
+          # Step 7: Publish Test Reports
+          - task: PublishBuildArtifacts@1
+            inputs:
+              pathToPublish: '$(System.DefaultWorkingDirectory)/test-output'
+              artifactName: 'test-reports-$(Build.BuildId)'
+              publishLocation: 'Container'
+            displayName: 'Publish Test Reports'
+            condition: always()
+
+          # Step 8: Publish Test Logs
+          - task: PublishBuildArtifacts@1
+            inputs:
+              pathToPublish: '$(System.DefaultWorkingDirectory)/logs'
+              artifactName: 'test-logs-$(Build.BuildId)'
+              publishLocation: 'Container'
+            displayName: 'Publish Test Logs'
+            condition: always()
+
+          # Step 9: Publish Surefire Reports
+          - task: PublishBuildArtifacts@1
+            inputs:
+              pathToPublish: '$(System.DefaultWorkingDirectory)/target/surefire-reports'
+              artifactName: 'surefire-reports-$(Build.BuildId)'
+              publishLocation: 'Container'
+            displayName: 'Publish Surefire Reports'
+            condition: always()
+
+  - stage: Cleanup
+    displayName: 'Cleanup and Finalize'
+    dependsOn: Build_and_Test
+    condition: always()
+    jobs:
+      - job: CleanupDocker
+        displayName: 'Stop and Clean Docker'
+
+        steps:
+          - script: |
+              echo "Stopping ParaBank container..."
+              docker stop $(PARABANK_CONTAINER_NAME) || true
+              
+              echo "Removing ParaBank container..."
+              docker rm $(PARABANK_CONTAINER_NAME) || true
+              
+              echo "Removing dangling images..."
+              docker image prune -f
+              
+              echo "Docker cleanup completed"
+              docker ps
+            displayName: 'Stop and Remove Docker Container'
+            condition: always()
+
+          - script: |
+              echo "=========================================="
+              echo "Pipeline Execution Summary"
+              echo "=========================================="
+              echo "Build ID: $(Build.BuildId)"
+              echo "Build Number: $(Build.BuildNumber)"
+              echo "Status: Completed"
+              echo "=========================================="
+            displayName: 'Pipeline Summary'
+            condition: always()
+
