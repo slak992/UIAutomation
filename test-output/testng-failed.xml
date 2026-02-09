@@ -13,7 +13,7 @@
           <include name="webDriverSetUp"/>
           <include name="tearDownSetup"/>
           <include name="login_registerUser"/>
-          <include name="checkUserFromDB" invocation-numbers="0 1"/>
+          <include name="checkUserFromDB" invocation-numbers="0"/>
           <include name="globalSetup"/>
         </methods>
       </class> <!-- com.parabank.ui.tests.pos.POS_Login_Test -->
@@ -21,10 +21,19 @@
   </test> <!-- Login(failed) -->
   <test thread-count="5" parallel="methods" name="Negative Tests(failed)">
     <classes>
+      <class name="com.parabank.ui.tests.neg.NEG_Login_Test">
+        <methods>
+          <include name="tearDown"/>
+          <include name="webDriverSetUp"/>
+          <include name="tearDownSetup"/>
+          <include name="NEG_registerUserWithpasswordBlank"/>
+          <include name="globalSetup"/>
+        </methods>
+      </class> <!-- com.parabank.ui.tests.neg.NEG_Login_Test -->
       <class name="com.parabank.ui.tests.neg.NEG_loanProcessingTest">
         <methods>
-          <include name="NEG_loanProcessing_request"/>
           <include name="tearDown"/>
+          <include name="NEG_loanProcessing_request"/>
           <include name="webDriverSetUp"/>
           <include name="tearDownSetup"/>
           <include name="globalSetup"/>
@@ -37,8 +46,11 @@
       <class name="com.parabank.ui.tests.pos.POS_OpenNewAccount">
         <methods>
           <include name="tearDown"/>
+          <include name="verifyDefaultInitBalanceTest"/>
+          <include name="verifyOpeningAccountWithOtherThanBaseAcct"/>
           <include name="webDriverSetUp"/>
           <include name="tearDownSetup"/>
+          <include name="verifyMinBalanceTest"/>
           <include name="globalSetup"/>
           <include name="verifyOpeningSavingsAcct"/>
         </methods>

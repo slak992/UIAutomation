@@ -18,12 +18,16 @@ import java.util.Properties;
 
 import org.apache.commons.io.input.ReaderInputStream;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.chromium.ChromiumOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import java.time.Duration;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -96,17 +100,53 @@ public class BaseTest{
 	public void tearDownSetup() throws SQLException, IOException, InterruptedException
 	{
 		sqlObj.closeConnection();
-		if(prop.getProperty("downloadKlovReportFlag").equals("true"))
+
+		// Check if running in CI/CD environment (Azure DevOps)
+		boolean isCIEnvironment = System.getenv("SYSTEM_TEAMFOUNDATIONCOLLECTIONURI") != null ||
+		                          System.getenv("BUILD_REPOSITORY_URI") != null ||
+		                          System.getenv("TF_BUILD") != null ||
+		                          System.getenv("CI") != null;
+
+		if(isCIEnvironment)
 		{
-			WebDriver driver = new ChromeDriver(getWebDriverOptions(new ChromeOptions()));
-			threadLocalDriver.set(driver);
-			getDriver().manage().window().maximize();
-			getDriver().get(prop.getProperty("klovUrl"));
-			Thread.sleep(1000);
+			System.out.println("⚠️  Running in Azure DevOps Pipeline - Skipping Klov report generation");
+			System.out.println("   TestNG reports will be published to Azure pipeline artifacts");
+			System.out.println("   Klov reporting is available only in local execution");
+		}
+		else if(prop.getProperty("downloadKlovReportFlag").equals("true"))
+		{
+			try
+			{
+				generateKlovReport();
+			}
+			catch(Exception e)
+			{
+				System.out.println("⚠️  Failed to generate Klov report: " + e.getMessage());
+				e.printStackTrace();
+			}
+		}
+	}
+
+	private void generateKlovReport() throws IOException, InterruptedException
+	{
+		WebDriver driver = new ChromeDriver(getWebDriverOptions(new ChromeOptions()));
+		threadLocalDriver.set(driver);
+		getDriver().manage().window().maximize();
+		getDriver().get(prop.getProperty("klovUrl"));
+
+		// Use WebDriverWait instead of Thread.sleep() for better reliability
+		try
+		{
+			WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("body")));
+
 			cdpObject.savePageAsPDF(getDriver(), downloadFilePath, prop.getProperty("klovProjectName"));
+			System.out.println("✓ Klov report generated successfully");
+		}
+		finally
+		{
 			getDriver().close();
 		}
-		
 	}
 
 
@@ -122,8 +162,8 @@ public class BaseTest{
 	{
 		return threadLocalDriver.get();
 	}
-	
-	
+
+
 	@BeforeMethod(alwaysRun = true)
 	public void webDriverSetUp() throws IOException
 	{
@@ -320,6 +360,7 @@ public class BaseTest{
 		excelData = this.excelHelperObj.readExcelData(System.getProperty("user.dir") + prop.getProperty("excelFilePath"), "UI");
 		for(Map<String,String> eachData:excelData)
 		{
+			System.out.println(eachData.get("testName"));
 			if(eachData.containsValue(testName))
 			{
 				return eachData;
@@ -356,7 +397,7 @@ public class BaseTest{
 		try
 		{
 			Login loginObj = createPage(Login.class);
-			Map<String,String> testData = getTestData("POS_OpenNewAccount");
+			Map<String,String> testData = getTestData("POS_DB_CleanAndInitiate");
 
 			loginObj.loginUser(testData.get("userName"), testData.get("password"));
 

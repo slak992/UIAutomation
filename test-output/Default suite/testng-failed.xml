@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.parabank.ui.tests.pos.POS_ChromeDevToolsTest">
+      <class name="com.parabank.ui.tests.pos.POS_Login_Test">
         <methods>
           <include name="tearDown"/>
           <include name="webDriverSetUp"/>
           <include name="tearDownSetup"/>
-          <include name="blockSpecificRequestCalls"/>
+          <include name="login_registerUser"/>
           <include name="globalSetup"/>
         </methods>
-      </class> <!-- com.parabank.ui.tests.pos.POS_ChromeDevToolsTest -->
+      </class> <!-- com.parabank.ui.tests.pos.POS_Login_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
