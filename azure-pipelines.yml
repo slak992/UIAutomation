@@ -109,13 +109,17 @@ stages:
             condition: always()
 
           # Step 11: Publish Test Reports
+          - script: |
+              mkdir -p test-output
+            displayName: 'Create test-output folder'
+            condition: always()
           - task: PublishBuildArtifacts@1
             inputs:
               pathToPublish: '$(System.DefaultWorkingDirectory)/test-output'
               artifactName: 'test-reports-$(Build.BuildId)'
               publishLocation: 'Container'
             displayName: 'Publish Test Reports'
-            condition: and(always(), exists('$(System.DefaultWorkingDirectory)/test-output'))
+            condition: always()
 
           # Step 12: Publish Surefire Reports
           - task: PublishBuildArtifacts@1
