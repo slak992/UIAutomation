@@ -27,16 +27,24 @@ public class ExtentReportManager {
 			extend.setSystemInfo("Organization", "PARABANK");
 			extend.setSystemInfo("Project", "Payment Systems");
 			extend.setSystemInfo("Team", "UI Automation");
-			
-			ExtentKlovReporter  klov = new ExtentKlovReporter("ParaBank-UI", buildVersion);
-	        
-	        // Connect to Klov (Docker maps port 80 to 8080 internally)
-	        klov.initKlovServerConnection(klovUrl);
-	        
-	        // Connect to MongoDB
-	        klov.initMongoDbConnection("localhost", 27017);
+			boolean isCI = "true".equalsIgnoreCase(System.getenv("CI"));
+			if(!isCI)
+			{
+				ExtentKlovReporter  klov = new ExtentKlovReporter("ParaBank-UI", buildVersion);
 
-	        extend.attachReporter(klov);
+				// Connect to Klov (Docker maps port 80 to 8080 internally)
+				klov.initKlovServerConnection(klovUrl);
+
+				// Connect to MongoDB
+				klov.initMongoDbConnection("localhost", 27017);
+
+				extend.attachReporter(klov);
+			}
+			else {
+				System.out.println("🔵 CI/CD run - Skipping MongoDB initialization");
+			}
+			
+
 		}
 		
 		return extend;
