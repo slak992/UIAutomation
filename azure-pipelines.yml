@@ -69,7 +69,7 @@ stages:
             displayName: 'Verify Maven Installation'
 
           # Step 7: Maven Clean
-          - task: Maven@3
+          - task: Maven@4
             inputs:
               mavenPomFile: 'pom.xml'
               mavenOptions: '-Xmx3072m $(MAVEN_OPTS)'
@@ -81,8 +81,12 @@ stages:
 
           # Step 8: Run Tests
           - script: |
-              mvn -q clean test -DsuiteXmlFile=AllTests.xml -Dheadless=true
-              displayName: 'Run TestNG Suite - AllTests.xml'
+              mvn -q test -DsuiteXmlFile=AllTests.xml -Dheadless=true
+            displayName: 'Run TestNG Suite - AllTests.xml'
+          - script: |
+              mkdir -p logs
+            displayName: 'Create logs folder'
+            condition: always()
 
           # Step 9: Publish JUnit Test Results
           - task: PublishTestResults@2
@@ -111,7 +115,7 @@ stages:
               artifactName: 'test-reports-$(Build.BuildId)'
               publishLocation: 'Container'
             displayName: 'Publish Test Reports'
-            condition: always()
+            condition: and(always(), exists('$(System.DefaultWorkingDirectory)/test-output'))
 
           # Step 12: Publish Surefire Reports
           - task: PublishBuildArtifacts@1
