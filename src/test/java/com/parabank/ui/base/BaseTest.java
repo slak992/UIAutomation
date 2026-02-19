@@ -92,7 +92,7 @@ public class BaseTest{
 		
 		cdpObject= new ChromeDevToolProtocol();
 		this.jsObj = new JsonReader();
-		this.jsonPath = System.getProperty("user.dir")+"\\src\\test\\java\\resources\\configurations\\"+prop.getProperty("jsonFileName");
+		this.jsonPath = System.getProperty("user.dir")+"/src/test/java/resources/configurations/"+prop.getProperty("jsonFileName");
 		
 	}
 	
@@ -349,7 +349,7 @@ public class BaseTest{
 	}
 	public static void initProp() throws IOException
 	{
-		String propertyFilePath = System.getProperty("user.dir")+"\\src\\test\\java\\resources\\configurations\\config.properties";
+		String propertyFilePath = System.getProperty("user.dir")+"/src/test/java/resources/configurations/config.properties";
 		prop = new Properties();
 		FileInputStream propFile = new FileInputStream(new File(propertyFilePath));
 		prop.load(propFile);
