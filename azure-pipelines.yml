@@ -80,22 +80,9 @@ stages:
             displayName: 'Maven Clean'
 
           # Step 8: Run Tests
-          - task: Maven@3
-            inputs:
-              mavenPomFile: 'pom.xml'
-              mavenOptions: '-Xmx3072m $(MAVEN_OPTS)'
-              javaHomeOption: 'JDKVersion'
-              jdkVersionOption: '$(JAVA_VERSION)'
-              jdkArchitectureOption: 'x64'
-              publishJUnitResults: true
-              testResultsFiles: '**/surefire-reports/TEST-*.xml'
-              testResultsFormat: 'JUnit'
-              goals: 'test'
-              arguments: |
-                -DsuiteXmlFile=testng.xml
-                -Dheadless=true
-            displayName: 'Run Tests with Maven'
-            continueOnError: true
+          - script: |
+              mvn -q clean test -DsuiteXmlFile=AllTests.xml -Dheadless=true
+              displayName: 'Run TestNG Suite - AllTests.xml'
 
           # Step 9: Publish JUnit Test Results
           - task: PublishTestResults@2
