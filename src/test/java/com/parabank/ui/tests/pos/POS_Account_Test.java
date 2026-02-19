@@ -14,7 +14,7 @@ import com.parabank.ui.base.BaseTest;
 
 public class POS_Account_Test extends BaseTest{
 	
-	@Test
+	@Test(groups={"regression"})
 	public void account_OpenNewAccount() throws IOException
 	{
 		Map<String,String> testData = getTestData("account_OpenNewAccount");
