@@ -81,8 +81,8 @@ stages:
 
           # Step 8: Run Tests
           - script: |
-              mvn -q test -DsuiteXmlFile=AllTests.xml -Dheadless=true
-            displayName: 'Run TestNG Suite - AllTests.xml'
+              mvn -q test -DsuiteXmlFile=regressionSuit.xml -Dheadless=true
+            displayName: 'Run TestNG Suite - regressionSuit.xml'
           - script: |
               mkdir -p logs
             displayName: 'Create logs folder'
