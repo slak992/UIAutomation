@@ -71,7 +71,7 @@ public class POS_OpenNewAccount extends BaseTest {
 		}
 	}
 	
-	@Test(groups = {"regression"})
+	@Test(priority = 2)
 	public void verifyMinBalanceTest() throws DataException, IOException
 	{
 		Map<String,String> testData = getTestData("verifyMinBalanceTest");
