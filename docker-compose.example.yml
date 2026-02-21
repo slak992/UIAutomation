@@ -3,7 +3,7 @@ version: '3.8'
 services:
   parabank:
     # Use locally built image or pull from registry
-    image: parabank:latest
+    image: parasoft/parabank:latest
 
     # Container name
     container_name: parabank-test
