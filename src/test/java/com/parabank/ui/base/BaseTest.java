@@ -55,11 +55,11 @@ public class BaseTest {
     protected SoftAssert softAssert;
     protected static ExecelHelper excelHelperObj;
     protected static SQLHelper sqlObj;
-    protected String jsonPath;
-    protected JsonReader jsObj;
+    protected static String jsonPath;
+    protected static JsonReader jsObj;
     //	private static ThreadLocal<ExecelHelper> excelHelper = new ThreadLocal<>();
     protected ExtentReportManager exManager;
-    protected ChromeDevToolProtocol cdpObject;
+    protected static ChromeDevToolProtocol cdpObject;
     String downloadFilePath;
 
     static {
@@ -78,17 +78,7 @@ public class BaseTest {
 //		
 //		
 //	}
-    @BeforeClass(alwaysRun = true)
-    public void classSetup() throws IOException {
-        if (cdpObject == null) cdpObject = new ChromeDevToolProtocol();
-        if (jsObj == null) jsObj = new JsonReader();
 
-        if (jsonPath == null) {
-            jsonPath = System.getProperty("user.dir")
-                    + "/src/test/resources/configurations/"
-                    + prop.getProperty("jsonFileName");
-        }
-    }
 
     @BeforeSuite(alwaysRun = true)
     public void globalSetup() throws IOException {
