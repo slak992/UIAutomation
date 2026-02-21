@@ -19,7 +19,7 @@ public class NEG_loanProcessingTest extends BaseTest {
 	
 	
 
-	@Test(retryAnalyzer = RetryAnalyser.class,groups = {"regression"})
+	@Test(retryAnalyzer = RetryAnalyser.class)
 	public void NEG_loanProcessing_request() throws IOException
 	{
 		Map<String,String> testData = getTestData("NEG_loanProcessing_request");
