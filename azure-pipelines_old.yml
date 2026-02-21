@@ -68,33 +68,8 @@ stages:
           - script: mvn --version
             displayName: 'Verify Maven Installation'
 
-          # NEW Step 7: Start ParaBank using Docker Compose + wait until ready
-          - script: |
-              docker --version
-              docker compose version
 
-              # Start ParaBank containers
-              docker compose -f docker-compose.example.yml up -d
-
-              echo "Containers:"
-              docker ps
-
-              echo "Waiting for ParaBank on http://localhost:8080/parabank ..."
-              for i in {1..60}; do
-                if curl -fsS http://localhost:8080/parabank/ >/dev/null; then
-                  echo "✅ ParaBank is UP"
-                  exit 0
-                fi
-                echo "Still waiting... ($i)"
-                sleep 2
-              done
-
-              echo "❌ ParaBank did not start. Printing logs:"
-              docker compose -f docker-compose.example.yml logs --no-color
-              exit 1
-            displayName: 'Start ParaBank (Docker Compose) + Wait'
-
-          # Step 8: Maven Clean
+          # Step 7: Maven Clean
           - task: Maven@4
             inputs:
               mavenPomFile: 'pom.xml'
@@ -105,17 +80,16 @@ stages:
               goals: 'clean'
             displayName: 'Maven Clean'
 
-          # Step 9: Run Tests
+          # Step 8: Run Tests
           - script: |
               mvn -q test -DsuiteXmlFile=regressionSuit.xml -Dheadless=true
             displayName: 'Run TestNG Suite - regressionSuit.xml'
-
           - script: |
               mkdir -p logs
             displayName: 'Create logs folder'
             condition: always()
 
-          # Step 10: Publish JUnit Test Results
+          # Step 9: Publish JUnit Test Results
           - task: PublishTestResults@2
             inputs:
               testResultsFormat: 'JUnit'
@@ -126,7 +100,7 @@ stages:
             displayName: 'Publish JUnit Test Results'
             condition: succeededOrFailed()
 
-          # Step 11: Publish Test Logs
+          # Step 10: Publish Test Logs
           - task: PublishBuildArtifacts@1
             inputs:
               pathToPublish: '$(System.DefaultWorkingDirectory)/logs'
@@ -135,12 +109,11 @@ stages:
             displayName: 'Publish Test Logs'
             condition: always()
 
-          # Step 12: Publish Test Reports
+          # Step 11: Publish Test Reports
           - script: |
               mkdir -p test-output
             displayName: 'Create test-output folder'
             condition: always()
-
           - task: PublishBuildArtifacts@1
             inputs:
               pathToPublish: '$(System.DefaultWorkingDirectory)/test-output'
@@ -149,7 +122,7 @@ stages:
             displayName: 'Publish Test Reports'
             condition: always()
 
-          # Step 13: Publish Surefire Reports
+          # Step 12: Publish Surefire Reports
           - task: PublishBuildArtifacts@1
             inputs:
               pathToPublish: '$(System.DefaultWorkingDirectory)/target/surefire-reports'
@@ -158,17 +131,7 @@ stages:
             displayName: 'Publish Surefire Reports'
             condition: always()
 
-          # NEW Step 14: Always print ParaBank logs + stop containers
-          - script: |
-              echo "==== ParaBank docker logs ===="
-              docker compose -f docker-compose.example.yml logs --no-color || true
-
-              echo "==== Stopping ParaBank containers ===="
-              docker compose -f docker-compose.example.yml down -v || true
-            displayName: 'Stop ParaBank (Docker Compose)'
-            condition: always()
-
-          # Step 15: Generate Summary Report
+          # Step 13: Generate Summary Report
           - script: |
               echo "=========================================="
               echo "Test Execution Summary"
@@ -189,3 +152,4 @@ stages:
               fi
             displayName: 'Generate Summary Report'
             condition: always()
+
