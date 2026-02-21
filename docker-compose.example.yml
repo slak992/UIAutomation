@@ -3,7 +3,7 @@ version: '3.8'
 services:
   parabank:
     # Use locally built image or pull from registry
-    image: parabank:latest
+    image: parasoft/parabank:latest
 
     # Container name
     container_name: parabank-test
@@ -25,12 +25,6 @@ services:
       timeout: 5s
       retries: 5
       start_period: 30s
-
-    # Volume mounts (optional)
-    volumes:
-      # Mount logs directory if needed
-      # - ./logs:/usr/local/tomcat/logs
-      # - ./webapps:/usr/local/tomcat/webapps
 
     # Restart policy
     restart: unless-stopped
