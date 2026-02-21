@@ -8,7 +8,7 @@
           <include name="tearDown"/>
           <include name="webDriverSetUp"/>
           <include name="tearDownSetup"/>
-          <include name="login_registerUser"/>
+          <include name="checkUserFromDB" invocation-numbers="0 1"/>
           <include name="globalSetup"/>
         </methods>
       </class> <!-- com.parabank.ui.tests.pos.POS_Login_Test -->
