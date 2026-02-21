@@ -8,326 +8,44 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Login</a></td><td class="num">7</td><td class="num">0</td><td class="num attn">7</td><td class="num attn">2</td><td class="num">99,127</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">Negative Tests</a></td><td class="num">11</td><td class="num attn">1</td><td class="num attn">2</td><td class="num attn">1</td><td class="num">89,959</td><td></td><td></td></tr>
-<tr><td><a href="#t2">Account Settings</a></td><td class="num">1</td><td class="num attn">3</td><td class="num">0</td><td class="num attn">1</td><td class="num">52,047,425</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">19</th><th class="num attn">4</th><th class="num attn">9</th><th class="num attn">4</th><th class="num">52,236,511</th><th colspan="2"></th></tr>
+<tr><th colspan="8">Default suite</th></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">3,919</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Login &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.parabank.ui.tests.pos.POS_loanProcessingTest</td><td><a href="#m0">tearDown</a></td><td rowspan="1">1770614569569</td><td rowspan="1">7541</td></tr><tr><th colspan="4">Login &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">com.parabank.ui.tests.pos.POS_Login_Test</td><td><a href="#m1">checkUserFromDB</a></td><td rowspan="1">1770614581241</td><td rowspan="1">4063</td></tr><tr class="failedeven"><td><a href="#m2">login_registerUser</a></td><td rowspan="1">1770614624188</td><td rowspan="1">194</td></tr><tr><th colspan="4">Login &#8212; retried</th></tr><tr class="retriedeven"><td rowspan="6">com.parabank.ui.tests.pos.POS_Login_Test</td><td><a href="#m3">checkUserFromDB</a></td><td rowspan="4">1770614538751</td><td rowspan="4">4455</td></tr><tr class="retriedeven"><td><a href="#m4">checkUserFromDB</a></td></tr><tr class="retriedeven"><td><a href="#m5">checkUserFromDB</a></td></tr><tr class="retriedeven"><td><a href="#m6">checkUserFromDB</a></td></tr><tr class="retriedeven"><td><a href="#m7">login_registerUser</a></td><td rowspan="2">1770614614740</td><td rowspan="2">177</td></tr><tr class="retriedeven"><td><a href="#m8">login_registerUser</a></td></tr><tr class="retriedodd"><td rowspan="1">com.parabank.ui.tests.pos.POS_TransferFunds</td><td><a href="#m9">verifyTransferFunds</a></td><td rowspan="1">1770614539061</td><td rowspan="1">49480</td></tr><tr><th colspan="4">Login &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.parabank.ui.tests.pos.POS_Account_Test</td><td><a href="#m10">account_OpenNewAccount</a></td><td rowspan="1">1770614538737</td><td rowspan="1">11562</td></tr><tr class="passedeven"><td><a href="#m11">account_checkNewAccountDettails</a></td><td rowspan="1">1770614574501</td><td rowspan="1">3459</td></tr><tr class="passedodd"><td rowspan="2">com.parabank.ui.tests.pos.POS_Login_Test</td><td><a href="#m12">checkUserFromDB</a></td><td rowspan="1">1770614609519</td><td rowspan="1">946</td></tr><tr class="passedodd"><td><a href="#m13">login_user</a></td><td rowspan="1">1770614627688</td><td rowspan="1">452</td></tr><tr class="passedeven"><td rowspan="1">com.parabank.ui.tests.pos.POS_Transaction</td><td><a href="#m14">findTransactionByDate</a></td><td rowspan="1">1770614539405</td><td rowspan="1">56035</td></tr><tr class="passedodd"><td rowspan="1">com.parabank.ui.tests.pos.POS_TransferFunds</td><td><a href="#m15">verifyTransferFunds</a></td><td rowspan="1">1770614594640</td><td rowspan="1">26317</td></tr><tr class="passedeven"><td rowspan="1">com.parabank.ui.tests.pos.POS_loanProcessingTest</td><td><a href="#m16">loanProcessing_request</a></td><td rowspan="1">1770614538495</td><td rowspan="1">31033</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">Negative Tests &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.parabank.ui.tests.neg.NEG_Login_Test</td><td><a href="#m17">webDriverSetUp</a></td><td rowspan="1">1770614681535</td><td rowspan="1">36601</td></tr><tr><th colspan="4">Negative Tests &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.parabank.ui.tests.neg.NEG_loanProcessingTest</td><td><a href="#m18">NEG_loanProcessing_request</a></td><td rowspan="1">1770614692448</td><td rowspan="1">19241</td></tr><tr><th colspan="4">Negative Tests &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">com.parabank.ui.tests.neg.NEG_Login_Test</td><td><a href="#m19">NEG_registerUserWithpasswordBlank</a></td><td rowspan="1">1770614718152</td><td rowspan="1">0</td></tr><tr><th colspan="4">Negative Tests &#8212; retried</th></tr><tr class="retriedeven"><td rowspan="2">com.parabank.ui.tests.neg.NEG_loanProcessingTest</td><td><a href="#m20">NEG_loanProcessing_request</a></td><td rowspan="2">1770614638070</td><td rowspan="2">15255</td></tr><tr class="retriedeven"><td><a href="#m21">NEG_loanProcessing_request</a></td></tr><tr><th colspan="4">Negative Tests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="11">com.parabank.ui.tests.neg.NEG_Login_Test</td><td><a href="#m22">NEG_loginWithInvalidUser</a></td><td rowspan="1">1770614639247</td><td rowspan="1">3724</td></tr><tr class="passedeven"><td><a href="#m23">NEG_registerUserWithAddressBlank</a></td><td rowspan="1">1770614638043</td><td rowspan="1">15417</td></tr><tr class="passedeven"><td><a href="#m24">NEG_registerUserWithCityBlank</a></td><td rowspan="1">1770614639104</td><td rowspan="1">14692</td></tr><tr class="passedeven"><td><a href="#m25">NEG_registerUserWithConfirmPasswordBlank</a></td><td rowspan="1">1770614638414</td><td rowspan="1">15217</td></tr><tr class="passedeven"><td><a href="#m26">NEG_registerUserWithFirstNameBlank</a></td><td rowspan="1">1770614660651</td><td rowspan="1">16997</td></tr><tr class="passedeven"><td><a href="#m27">NEG_registerUserWithLastNameBlank</a></td><td rowspan="1">1770614661267</td><td rowspan="1">15686</td></tr><tr class="passedeven"><td><a href="#m28">NEG_registerUserWithPasswordMismatch</a></td><td rowspan="1">1770614661602</td><td rowspan="1">16165</td></tr><tr class="passedeven"><td><a href="#m29">NEG_registerUserWithSSNBlank</a></td><td rowspan="1">1770614664354</td><td rowspan="1">14447</td></tr><tr class="passedeven"><td><a href="#m30">NEG_registerUserWithStateBlank</a></td><td rowspan="1">1770614688832</td><td rowspan="1">21376</td></tr><tr class="passedeven"><td><a href="#m31">NEG_registerUserWithUserNameBlank</a></td><td rowspan="1">1770614689125</td><td rowspan="1">21052</td></tr><tr class="passedeven"><td><a href="#m32">NEG_registerUserWithzipCodeBlank</a></td><td rowspan="1">1770614689075</td><td rowspan="1">21144</td></tr></tbody>
-<tbody id="t2"><tr><th colspan="4">Account Settings &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.parabank.ui.tests.pos.POS_OpenNewAccount</td><td><a href="#m33">webDriverSetUp</a></td><td rowspan="1">1770614736841</td><td rowspan="1">51987222</td></tr><tr><th colspan="4">Account Settings &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.parabank.ui.tests.pos.POS_OpenNewAccount</td><td><a href="#m34">verifyOpeningSavingsAcct</a></td><td rowspan="1">1770666762887</td><td rowspan="1">0</td></tr><tr><th colspan="4">Account Settings &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="3">com.parabank.ui.tests.pos.POS_OpenNewAccount</td><td><a href="#m35">verifyDefaultInitBalanceTest</a></td><td rowspan="1">1770666765843</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m36">verifyMinBalanceTest</a></td><td rowspan="1">1770666724065</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m37">verifyOpeningAccountWithOtherThanBaseAcct</a></td><td rowspan="1">1770666760004</td><td rowspan="1">0</td></tr><tr><th colspan="4">Account Settings &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.parabank.ui.tests.pos.POS_OpenNewAccount</td><td><a href="#m38">verifyCustomiseInitialBalance</a></td><td rowspan="1">1770614725002</td><td rowspan="1">9534</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">com.parabank.ui.tests.pos.POS_Login_Test</td><td><a href="#m0">checkUserFromDB</a></td><td rowspan="2">1771661206696</td><td rowspan="2">14</td></tr><tr class="failedeven"><td><a href="#m1">checkUserFromDB</a></td></tr></tbody>
 </table>
-<h2>Login</h2><h3 id="m0">com.parabank.ui.tests.pos.POS_loanProcessingTest#tearDown</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
-	expected [02-06-2026] but found [02-9-2026]
-	at com.parabank.ui.base.BaseTest.tearDown(BaseTest.java:267)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+<h2>Default test</h2><h3 id="m0">com.parabank.ui.tests.pos.POS_Login_Test#checkUserFromDB</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>User2</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: Error while initiating class Login
+	at com.parabank.ui.base.BaseTest.createPage(BaseTest.java:312)
+	at com.parabank.ui.tests.pos.POS_Login_Test.checkUserFromDB(POS_Login_Test.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:47)
+	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:76)
+	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:11)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.parabank.ui.tests.pos.POS_Login_Test#checkUserFromDB</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>User1</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.internal.thread.ThreadTimeoutException: Method com.parabank.ui.tests.pos.POS_Login_Test.checkUserFromDB() didn&apos;t finish within the time-out 4000
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+Caused by: java.lang.IllegalStateException: Driver is null. @BeforeMethod didn&apos;t run.
+	at com.parabank.ui.base.BaseTest.createPage(BaseTest.java:301)
+	... 11 more
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.parabank.ui.tests.pos.POS_Login_Test#checkUserFromDB</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>User1</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: Error while initiating class Login
+	at com.parabank.ui.base.BaseTest.createPage(BaseTest.java:312)
+	at com.parabank.ui.tests.pos.POS_Login_Test.checkUserFromDB(POS_Login_Test.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:47)
+	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:76)
+	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:11)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.parabank.ui.tests.pos.POS_Login_Test#login_registerUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;com.parabank.ui.PARABANK.helpers.JsonReader.queryJsonData(String, String)&quot; because &quot;this.jsObj&quot; is null
-	at com.parabank.ui.tests.pos.POS_Login_Test.login_registerUser(POS_Login_Test.java:33)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 11 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.parabank.ui.tests.pos.POS_Login_Test#checkUserFromDB</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>User1</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.internal.thread.ThreadTimeoutException: Method com.parabank.ui.tests.pos.POS_Login_Test.checkUserFromDB() didn&apos;t finish within the time-out 4000
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.parabank.ui.tests.pos.POS_Login_Test#checkUserFromDB</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>User2</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.internal.thread.ThreadTimeoutException: Method com.parabank.ui.tests.pos.POS_Login_Test.checkUserFromDB() didn&apos;t finish within the time-out 4000
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.parabank.ui.tests.pos.POS_Login_Test#checkUserFromDB</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>User1</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.internal.thread.ThreadTimeoutException: Method com.parabank.ui.tests.pos.POS_Login_Test.checkUserFromDB() didn&apos;t finish within the time-out 4000
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">com.parabank.ui.tests.pos.POS_Login_Test#checkUserFromDB</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>User2</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.internal.thread.ThreadTimeoutException: Method com.parabank.ui.tests.pos.POS_Login_Test.checkUserFromDB() didn&apos;t finish within the time-out 4000
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m7">com.parabank.ui.tests.pos.POS_Login_Test#login_registerUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;com.parabank.ui.PARABANK.helpers.JsonReader.queryJsonData(String, String)&quot; because &quot;this.jsObj&quot; is null
-	at com.parabank.ui.tests.pos.POS_Login_Test.login_registerUser(POS_Login_Test.java:33)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 11 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m8">com.parabank.ui.tests.pos.POS_Login_Test#login_registerUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;com.parabank.ui.PARABANK.helpers.JsonReader.queryJsonData(String, String)&quot; because &quot;this.jsObj&quot; is null
-	at com.parabank.ui.tests.pos.POS_Login_Test.login_registerUser(POS_Login_Test.java:33)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 11 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m9">com.parabank.ui.tests.pos.POS_TransferFunds#verifyTransferFunds</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.util.NoSuchElementException: Account number:14232 Not found
-	at com.parabank.ui.PARABANK.POM.AccountOverview.lambda$3(AccountOverview.java:55)
-	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
-	at com.parabank.ui.PARABANK.POM.AccountOverview.selectAccount(AccountOverview.java:55)
-	at com.parabank.ui.tests.pos.POS_TransferFunds.verifyTransferFunds(POS_TransferFunds.java:103)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 11 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m10">com.parabank.ui.tests.pos.POS_Account_Test#account_OpenNewAccount</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m11">com.parabank.ui.tests.pos.POS_Account_Test#account_checkNewAccountDettails</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m12">com.parabank.ui.tests.pos.POS_Login_Test#checkUserFromDB</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>User2</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m13">com.parabank.ui.tests.pos.POS_Login_Test#login_user</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m14">com.parabank.ui.tests.pos.POS_Transaction#findTransactionByDate</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@36f53b27</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m15">com.parabank.ui.tests.pos.POS_TransferFunds#verifyTransferFunds</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m16">com.parabank.ui.tests.pos.POS_loanProcessingTest#loanProcessing_request</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Negative Tests</h2><h3 id="m17">com.parabank.ui.tests.neg.NEG_Login_Test#webDriverSetUp</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
-from disconnected: Unable to receive message from renderer
-  (Session info: chrome=144.0.7559.133)
-Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b1c6d0c105a77301e87e9baf65ab0835, maximizeCurrentWindow {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\SREELA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57867}, goog:processID: 7852, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57867/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b1c6d0c105a77301e87e9baf65ab0835
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:561)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:638)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:642)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:1098)
-	at com.parabank.ui.base.BaseTest.webDriverSetUp(BaseTest.java:147)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m18">com.parabank.ui.tests.neg.NEG_loanProcessingTest#NEG_loanProcessing_request</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [02-09-2026] but found [02-9-2026]
-	at com.parabank.ui.tests.neg.NEG_loanProcessingTest.NEG_loanProcessing_request(NEG_loanProcessingTest.java:40)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 17 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m19">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithpasswordBlank</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
-from disconnected: Unable to receive message from renderer
-  (Session info: chrome=144.0.7559.133)
-Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b1c6d0c105a77301e87e9baf65ab0835, maximizeCurrentWindow {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\SREELA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57867}, goog:processID: 7852, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57867/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b1c6d0c105a77301e87e9baf65ab0835
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:561)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:638)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:642)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:1098)
-	at com.parabank.ui.base.BaseTest.webDriverSetUp(BaseTest.java:147)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m20">com.parabank.ui.tests.neg.NEG_loanProcessingTest#NEG_loanProcessing_request</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [02-09-2026] but found [02-9-2026]
-	at com.parabank.ui.tests.neg.NEG_loanProcessingTest.NEG_loanProcessing_request(NEG_loanProcessingTest.java:40)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 17 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m21">com.parabank.ui.tests.neg.NEG_loanProcessingTest#NEG_loanProcessing_request</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [02-09-2026] but found [02-9-2026]
-	at com.parabank.ui.tests.neg.NEG_loanProcessingTest.NEG_loanProcessing_request(NEG_loanProcessingTest.java:40)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 17 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m22">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_loginWithInvalidUser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m23">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithAddressBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m24">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithCityBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m25">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithConfirmPasswordBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m26">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithFirstNameBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m27">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithLastNameBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m28">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithPasswordMismatch</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m29">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithSSNBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m30">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithStateBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m31">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithUserNameBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m32">com.parabank.ui.tests.neg.NEG_Login_Test#NEG_registerUserWithzipCodeBlank</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Account Settings</h2><h3 id="m33">com.parabank.ui.tests.pos.POS_OpenNewAccount#webDriverSetUp</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. request timed out 
-Host info: host: &apos;LAPTOP-LT7RKUIB&apos;, ip: &apos;172.20.160.1&apos;
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:582)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:250)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:178)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:109)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:83)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:72)
-	at com.parabank.ui.base.BaseTest.webDriverSetUp(BaseTest.java:145)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.openqa.selenium.TimeoutException: java.net.http.HttpTimeoutException: request timed out
-Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:501)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:44)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:388)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	... 3 more
-Caused by: java.net.http.HttpTimeoutException: request timed out
-	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:569)
-	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:123)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:462)
-	... 8 more
-... Removed 15 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m34">com.parabank.ui.tests.pos.POS_OpenNewAccount#verifyOpeningSavingsAcct</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.TestNGException: 
-Parameter &apos;BalanceTest&apos; is required by @Test on method verifyOpeningSavingsAcct but has not been marked @Optional or defined
-in E:\AUTOMATION\PARABANK\AllTests.xml
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 12 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m35">com.parabank.ui.tests.pos.POS_OpenNewAccount#verifyDefaultInitBalanceTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. request timed out 
-Host info: host: &apos;LAPTOP-LT7RKUIB&apos;, ip: &apos;172.20.160.1&apos;
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:582)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:250)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:178)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:109)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:83)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:72)
-	at com.parabank.ui.base.BaseTest.webDriverSetUp(BaseTest.java:145)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.openqa.selenium.TimeoutException: java.net.http.HttpTimeoutException: request timed out
-Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:501)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:44)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:388)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	... 3 more
-Caused by: java.net.http.HttpTimeoutException: request timed out
-	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:569)
-	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:123)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:462)
-	... 8 more
-... Removed 15 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m36">com.parabank.ui.tests.pos.POS_OpenNewAccount#verifyMinBalanceTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. request timed out 
-Host info: host: &apos;LAPTOP-LT7RKUIB&apos;, ip: &apos;172.20.160.1&apos;
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:582)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:250)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:178)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:109)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:83)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:72)
-	at com.parabank.ui.base.BaseTest.webDriverSetUp(BaseTest.java:145)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.openqa.selenium.TimeoutException: java.net.http.HttpTimeoutException: request timed out
-Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:501)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:44)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:388)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	... 3 more
-Caused by: java.net.http.HttpTimeoutException: request timed out
-	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:569)
-	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:123)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:462)
-	... 8 more
-... Removed 15 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m37">com.parabank.ui.tests.pos.POS_OpenNewAccount#verifyOpeningAccountWithOtherThanBaseAcct</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. request timed out 
-Host info: host: &apos;LAPTOP-LT7RKUIB&apos;, ip: &apos;172.20.160.1&apos;
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:582)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:250)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:178)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:109)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:83)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:72)
-	at com.parabank.ui.base.BaseTest.webDriverSetUp(BaseTest.java:145)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.openqa.selenium.TimeoutException: java.net.http.HttpTimeoutException: request timed out
-Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:501)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:44)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:388)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	... 3 more
-Caused by: java.net.http.HttpTimeoutException: request timed out
-	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:569)
-	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:123)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:462)
-	... 8 more
-... Removed 15 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m38">com.parabank.ui.tests.pos.POS_OpenNewAccount#verifyCustomiseInitialBalance</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+Caused by: java.lang.IllegalStateException: Driver is null. @BeforeMethod didn&apos;t run.
+	at com.parabank.ui.base.BaseTest.createPage(BaseTest.java:301)
+	... 11 more
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

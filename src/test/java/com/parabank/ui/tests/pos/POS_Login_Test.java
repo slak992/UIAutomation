@@ -18,7 +18,7 @@ import com.parabank.ui.base.BaseTest;
 
 public class POS_Login_Test extends BaseTest{
 	
-	@Test(priority = 1,groups= {"mobile","regression"})
+	@Test(priority = 1,groups= {"mobile"})
 	public void login_registerUser() throws IOException, DataException, CustomException
 	{
 		
